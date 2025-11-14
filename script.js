@@ -69,15 +69,49 @@ if (contactForm) {
 // Theme Toggle
 const themeToggle = document.getElementById("theme-toggle");
 if (themeToggle) {
+    // Check for saved theme preference or prefer-color-scheme
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const currentTheme = localStorage.getItem("theme");
+    
+    // Set initial theme
+    if (currentTheme === "dark" || (!currentTheme && prefersDarkScheme.matches)) {
+        document.body.classList.add("dark-theme");
+        themeToggle.textContent = "☀️";
+    } else {
+        document.body.classList.remove("dark-theme");
+        themeToggle.textContent = "🌙";
+    }
+    
     themeToggle.addEventListener("click", function() {
         document.body.classList.toggle("dark-theme");
+        
         if (document.body.classList.contains("dark-theme")) {
             themeToggle.textContent = "☀️";
+            localStorage.setItem("theme", "dark");
         } else {
             themeToggle.textContent = "🌙";
+            localStorage.setItem("theme", "light");
         }
     });
 }
+
+// Apply theme on page load (for all pages)
+document.addEventListener("DOMContentLoaded", function() {
+    const currentTheme = localStorage.getItem("theme");
+    const themeToggle = document.getElementById("theme-toggle");
+    
+    if (currentTheme === "dark") {
+        document.body.classList.add("dark-theme");
+        if (themeToggle) {
+            themeToggle.textContent = "☀️";
+        }
+    } else {
+        document.body.classList.remove("dark-theme");
+        if (themeToggle) {
+            themeToggle.textContent = "🌙";
+        }
+    }
+});
 
 // Welcome Popup - Only on homepage
 if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
