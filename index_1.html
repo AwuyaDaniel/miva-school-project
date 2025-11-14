@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloria Couture | Luxury Fashion House</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #2c2c2c;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a67c52;
+        }
+
+        /* Marquee Styles */
+        .marquee-container {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 8px 0;
+            overflow: hidden;
+        }
+
+        marquee {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            border: none;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #a67c52;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #8a6540;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: #a67c52;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #a67c52;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        /* Events Section */
+        .events-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .event-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #a67c52;
+            margin-bottom: 5px;
+        }
+
+        /* Form Styles */
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #a67c52;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #8a6540;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 40px 0;
+        }
+
+        .mySlides {
+            display: none;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            text-align: center;
+            background-color: #2c2c2c;
+            color: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin: 40px 0;
+        }
+
+        .countdown-title {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #a67c52;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Color Theme Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #a67c52;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            font-size: 1.2rem;
+        }
+
+        /* Dark Theme */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme header {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .logo {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme nav a {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme h1, body.dark-theme h2, body.dark-theme h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .product-card,
+        body.dark-theme .form-container,
+        body.dark-theme .event-item {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme input, 
+        body.dark-theme select, 
+        body.dark-theme textarea {
+            background-color: #333;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">VELORIA COUTURE</div>
+            <div class="tagline">ELEGANCE REDEFINED</div>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#collections">Collections</a>
+            <a href="#trustees">Board of Trustees</a>
+            <a href="#events">Events</a>
+            <a href="#appointments">Appointments</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Marquee -->
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left">
+            Winter Collection Launch – Nov 15 | New Store Opening Soon! | Exclusive Preview: Spring Collection 2024
+        </marquee>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>VELORIA COUTURE</h1>
+                    <p>Where timeless elegance meets contemporary design</p>
+                    <a href="#collections" class="btn">Explore Collections</a>
+                </div>
+            </div>
+
+            <!-- Slideshow -->
+            <div class="slideshow-container">
+                <div class="mySlides fade" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');"></div>
+                <div class="mySlides fade" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb25c5d11e85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="mySlides fade" style="background-image: url('https://images.unsplash.com/photo-1539109136883-4bf6c6c71d2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-title">Winter Collection Launch In:</div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>About Veloria Couture</h2>
+            <p>Founded in 2010, Veloria Couture has established itself as a premier fashion house known for its exquisite craftsmanship and innovative designs. Our philosophy centers on creating garments that celebrate individuality while honoring traditional techniques.</p>
+            <p>Each collection tells a story, blending luxurious fabrics with meticulous attention to detail. Our designers draw inspiration from art, architecture, and global cultures to create pieces that transcend trends and become timeless additions to any wardrobe.</p>
+            <p>At Veloria Couture, we believe fashion should be both beautiful and sustainable. We prioritize ethical sourcing and production methods, ensuring our creations not only look good but do good.</p>
+        </section>
+
+        <!-- Collections Section -->
+        <section id="collections">
+            <h2>Our Collections</h2>
+            
+            <h3>Women's Collection</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Ethereal Evening Gown</div>
+                        <div class="product-price">$1,250</div>
+                        <p>A flowing silk gown with hand-embroidered details, perfect for special occasions.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Structured Blazer</div>
+                        <div class="product-price">$680</div>
+                        <p>Tailored wool blazer with architectural shoulders and minimalist design.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1583496661160-fb5886a13d77?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Floral Print Dress</div>
+                        <div class="product-price">$520</div>
+                        <p>Lightweight cotton dress with original botanical print and delicate ruffles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Men's Collection</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1593030103066-0093718efeb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Herringbone Overcoat</div>
+                        <div class="product-price">$950</div>
+                        <p>Wool-cashmere blend overcoat with classic herringbone pattern.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1582142306909-195724d1a6e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Italian Leather Jacket</div>
+                        <div class="product-price">$1,200</div>
+                        <p>Handcrafted leather jacket with subtle distressing and custom hardware.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1506629905607-e48b0e67d879?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Linen Suit</div>
+                        <div class="product-price">$780</div>
+                        <p>Breathable linen suit perfect for summer events and destination weddings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Accessories</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Signature Handbag</div>
+                        <div class="product-price">$650</div>
+                        <p>Structured leather handbag with distinctive metal clasp and adjustable strap.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Silk Scarf Collection</div>
+                        <div class="product-price">$180</div>
+                        <p>Set of three silk scarves with original artwork and hand-rolled edges.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="product-info">
+                        <div class="product-name">Leather Ankle Boots</div>
+                        <div class="product-price">$420</div>
+                        <p>Italian leather boots with block heel and side zip closure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board of Trustees Section -->
+        <section id="trustees">
+            <h2>Board of Trustees</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="member-name">Isabelle Moreau</div>
+                    <div class="member-role">CEO & Creative Director</div>
+                    <p>Visionary leader with 15+ years in luxury fashion. Isabelle oversees all creative direction and business strategy.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="member-name">Alexander Chen</div>
+                    <div class="member-role">Head of Design</div>
+                    <p>Alexander brings innovative silhouettes and textile expertise to each collection.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="member-name">Sophia Rodriguez</div>
+                    <div class="member-role">Marketing Director</div>
+                    <p>Sophia leads our global marketing initiatives and brand partnerships.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="member-name">James Fitzgerald</div>
+                    <div class="member-role">Financial Director</div>
+                    <p>James manages our financial operations and sustainable investment strategies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul class="events-list">
+                <li class="event-item">
+                    <div class="event-date">November 15, 2023</div>
+                    <h3>Winter Collection Launch</h3>
+                    <p>Join us for an exclusive preview of our Winter 2023 collection at our flagship store. Featuring live music, refreshments, and the opportunity to meet our design team.</p>
+                    <p><strong>Location:</strong> Veloria Couture Flagship Store, 123 Fashion Avenue</p>
+                    <p><strong>Time:</strong> 7:00 PM - 10:00 PM</p>
+                </li>
+                <li class="event-item">
+                    <div class="event-date">December 3, 2023</div>
+                    <h3>Charity Fashion Gala</h3>
+                    <p>Annual black-tie event supporting local arts education programs. Featuring a runway show, silent auction, and special performances.</p>
+                    <p><strong>Location:</strong> The Grand Ballroom, Metropolitan Hotel</p>
+                    <p><strong>Time:</strong> 6:30 PM - 11:00 PM</p>
+                </li>
+                <li class="event-item">
+                    <div class="event-date">January 20, 2024</div>
+                    <h3>Spring Collection Preview</h3>
+                    <p>Private viewing of our Spring 2024 collection for VIP clients and press. By invitation only.</p>
+                    <p><strong>Location:</strong> Veloria Couture Atelier</p>
+                    <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Appointments Section -->
+        <section id="appointments">
+            <h2>Book an Appointment</h2>
+            <p>Schedule a private consultation with our style experts. We offer personalized styling sessions, custom fittings, and wardrobe consultations.</p>
+            
+            <div class="form-container">
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Type</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="styling">Personal Styling</option>
+                            <option value="fitting">Custom Fitting</option>
+                            <option value="wardrobe">Wardrobe Consultation</option>
+                            <option value="bridal">Bridal Consultation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" placeholder="Please provide any additional details about your appointment request..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Appointment Request</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you. Reach out with any questions, comments, or inquiries.</p>
+            
+            <div class="form-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" name="contact-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="contact-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="contact-message" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h3>Visit Our Flagship Store</h3>
+                <p><strong>Address:</strong> 123 Fashion Avenue, New York, NY 10001</p>
+                <p><strong>Phone:</strong> (212) 555-1234</p>
+                <p><strong>Email:</strong> info@veloriacouture.com</p>
+                <p><strong>Store Hours:</strong> Monday-Saturday: 10:00 AM - 7:00 PM, Sunday: 12:00 PM - 6:00 PM</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VELORIA COUTURE</h3>
+                <p>Elegance Redefined since 2010. Creating timeless fashion with contemporary vision.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#events">Events</a>
+                <a href="#appointments">Appointments</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="#contact">Contact Us</a>
+                <a href="#">Shipping & Returns</a>
+                <a href="#">Size Guide</a>
+                <a href="#">Care Instructions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+                <a href="#">Newsletter</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Veloria Couture. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const countDownDate = new Date("Nov 15, 2023 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }
+
+        const countdownFunction = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Form Submission
+        document.getElementById("appointment-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Thank you for your appointment request! We will contact you shortly to confirm your booking.");
+            this.reset();
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Thank you for your message! We will respond to your inquiry within 24 hours.");
+            this.reset();
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("click", function() {
+            document.body.classList.toggle("dark-theme");
+            if (document.body.classList.contains("dark-theme")) {
+                themeToggle.textContent = "☀️";
+            } else {
+                themeToggle.textContent = "🌙";
+            }
+        });
+
+        // Welcome Popup
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                alert("Welcome to Veloria Couture - Where Elegance is Redefined!");
+            }, 1000);
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
