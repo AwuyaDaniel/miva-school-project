@@ -1,7 +1,7 @@
-# GROUP-F-PROJECT - Luxury Fashion House Website
+# Riyo secret - Luxury Fashion House Website
 
 ## Project Overview
-A sophisticated multi-page website for the fictional luxury fashion house "GROUP-F-PROJECT". This elegant website showcases high-end fashion collections, brand storytelling, and premium customer experiences.
+A sophisticated multi-page website for the fictional luxury fashion house "Riyo secret". This elegant website showcases high-end fashion collections, brand storytelling, and premium customer experiences.
 
 ## 📁 Project Structure
 ```
@@ -142,4 +142,4 @@ For technical support or customization inquiries, please refer to the contact in
 
 ---
 
-**GROUP-F-PROJECT** - *Elegance Redefined Since 2010*
+**Riyo secret** - *Elegance Redefined Since 2010*
