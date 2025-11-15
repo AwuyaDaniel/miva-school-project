@@ -117,13 +117,13 @@ document.addEventListener("DOMContentLoaded", function() {
 if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
     window.addEventListener("load", function() {
         setTimeout(function() {
-            alert("Welcome to Veloria Couture - Where Elegance is Redefined!");
+            alert("Welcome to GROUP-F-PROJECT - Where Elegance is Redefined!");
         }, 1000);
     });
 }
 
 // DOM Structure Explanation
-console.log("DOM Structure for Veloria Couture Website:");
+console.log("DOM Structure for GROUP-F-PROJECT Website:");
 console.log("Root: <html>");
 console.log("  ├── <head> (metadata, title, styles)");
 console.log("  └── <body>");
