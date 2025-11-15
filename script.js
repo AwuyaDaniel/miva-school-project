@@ -17,7 +17,7 @@ function showSlides() {
 
 // Countdown Timer
 function updateCountdown() {
-    const countDownDate = new Date("Nov 15, 2023 00:00:00").getTime();
+    const countDownDate = new Date("Nov 29, 2023 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
 
