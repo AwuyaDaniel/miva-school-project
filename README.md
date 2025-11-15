@@ -12,7 +12,7 @@ veloria-couture-website/
 ├── mens-collection.html    # Men's fashion collection
 ├── womens-collection.html  # Women's fashion collection
 ├── accessories.html        # Accessories collection
-├── trustees.html           # Board of Trustees
+├── trustees.html           # Team
 ├── events.html             # Upcoming events
 ├── appointments.html       # Booking appointments
 ├── contact.html            # Contact information
@@ -54,7 +54,7 @@ veloria-couture-website/
 - **Women's Collection** (`womens-collection.html`) - Elegant womenswear
 - **Accessories** (`accessories.html`) - Bags, shoes, jewelry
 
-### 4. Board of Trustees (`trustees.html`)
+### 4. Team (`trustees.html`)
 - Executive team profiles
 - Leadership bios and roles
 - Professional photography
@@ -100,7 +100,7 @@ veloria-couture-website/
 ✅ **10+ Pages** - Complete multi-page website  
 ✅ **Consistent Navigation** - Uniform header across all pages  
 ✅ **Product Showcase** - Multiple collection pages with products  
-✅ **Board of Trustees** - Team member profiles  
+✅ **Team** - Team member profiles  
 ✅ **Appointments System** - Booking form and services  
 ✅ **Events Calendar** - Upcoming events listing  
 ✅ **Marquee Element** - Scrolling announcements on all pages  
