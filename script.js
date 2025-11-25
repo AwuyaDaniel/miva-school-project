@@ -125,15 +125,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Welcome Popup - Only on homepage
+
+// Welcome Popup - Only on homepage and only once per session
 document.addEventListener("DOMContentLoaded", function() {
     const isHomepage = window.location.pathname.endsWith('index.html') || 
                       window.location.pathname.endsWith('/') || 
                       window.location.pathname === '';
     
-    if (isHomepage) {
+    if (isHomepage && !sessionStorage.getItem('welcomeShown')) {
         setTimeout(function() {
             alert("Welcome to Riyo Secrets - Where Elegance is Redefined!");
+            sessionStorage.setItem('welcomeShown', 'true');
         }, 1000);
     }
 });
