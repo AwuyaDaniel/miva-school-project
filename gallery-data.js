@@ -39,7 +39,7 @@ const galleryItems = [
     {
         type: 'image',
         src: 'images/products/owambe-asoebi-1.jpeg',
-        caption: 'Fashion Gala 2023'
+        caption: 'Fashion Gala 2025'
     },
     {
         type: 'image',

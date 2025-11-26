@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Countdown Timer - Fixed to count to Winter Collection Launch
 function updateCountdown() {
-    // Set to November 15, 2024 for Winter Collection Launch
+    // Set to December 5, 2024 for Winter Collection Launch
     const countDownDate = new Date("Dec 5, 2025 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
