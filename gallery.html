@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | VIC'JOMA</title>
+    <title>Gallery | VIC'JOMA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,7 +16,8 @@
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="collections.html">Collections</a>
-            <a href="trustees.html">Team</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="trustees.html">Board of Trustees</a>
             <a href="events.html">Events</a>
             <a href="appointments.html">Appointments</a>
             <a href="contact.html">Contact Us</a>
@@ -25,36 +26,34 @@
 
     <div class="marquee-container">
         <marquee behavior="scroll" direction="left">
-            Winter Collection Launch – Nov 29 | New Store Opening Soon! | Exclusive Preview: Spring Collection 2025
+            Winter Collection Launch – Nov 15 | New Store Opening Soon! | Exclusive Preview: Spring Collection 2025
         </marquee>
     </div>
 
     <div class="container">
-        <h1>About VIC'JOMA</h1>
-        
-        <div class="about-content">
-            <div class="about-image" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-            
-            <div class="about-text">
-                <h2>Our Story</h2>
-                <p>Founded in 2010, VIC'JOMA has established itself as a premier fashion house known for its exquisite craftsmanship and innovative designs. Our philosophy centers on creating garments that celebrate individuality while honoring traditional techniques.</p>
-                
-                <h2>Our Vision</h2>
-                <p>Each collection tells a story, blending luxurious fabrics with meticulous attention to detail. Our designers draw inspiration from art, architecture, and global cultures to create pieces that transcend trends and become timeless additions to any wardrobe.</p>
-                
-                <h2>Sustainability</h2>
-                <p>At VIC'JOMA, we believe fashion should be both beautiful and sustainable. We prioritize ethical sourcing and production methods, ensuring our creations not only look good but do good. Our commitment extends to:</p>
-                <ul>
-                    <li>Ethically sourced materials</li>
-                    <li>Local artisan partnerships</li>
-                    <li>Zero-waste production techniques</li>
-                    <li>Carbon-neutral operations</li>
-                </ul>
-                
-                <h2>Craftsmanship</h2>
-                <p>Every piece in our collection is a testament to exceptional craftsmanship. From initial sketch to final stitch, our garments undergo rigorous quality control to ensure they meet our exacting standards.</p>
-            </div>
+        <h1>Our Gallery</h1>
+        <p class="gallery-intro">Explore the world of VIC'JOMA through our curated collection of fashion moments, runway shows, and behind-the-scenes glimpses.</p>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items will be dynamically inserted here -->
         </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="galleryModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+            <video id="modalVideo" controls style="display: none;">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="modal-caption">
+            <span id="modalCaption"></span>
+        </div>
+        <button class="modal-nav prev">&#10094;</button>
+        <button class="modal-nav next">&#10095;</button>
     </div>
 
     <footer>
@@ -68,8 +67,8 @@
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
                 <a href="collections.html">Collections</a>
+                <a href="gallery.html">Gallery</a>
                 <a href="events.html">Events</a>
-                <a href="appointments.html">Appointments</a>
             </div>
             
             <div class="footer-section">
@@ -97,5 +96,6 @@
     <button class="theme-toggle" id="theme-toggle">🌙</button>
 
     <script src="script.js"></script>
+    <script src="gallery-data.js"></script>
 </body>
 </html>

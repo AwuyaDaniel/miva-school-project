@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Countdown Timer - Fixed to count to Winter Collection Launch
 function updateCountdown() {
     // Set to November 15, 2024 for Winter Collection Launch
-    const countDownDate = new Date("Nov 30, 2025 00:00:00").getTime();
+    const countDownDate = new Date("Dec 5, 2025 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
 
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     if (isHomepage && !sessionStorage.getItem('welcomeShown')) {
         setTimeout(function() {
-            alert("Welcome to Riyo Secrets - Where Elegance is Redefined!");
+            alert("Welcome to VIC'JOMA - Where Elegance is Redefined!");
             sessionStorage.setItem('welcomeShown', 'true');
         }, 1000);
     }
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // DOM Structure Explanation
-console.log("DOM Structure for Riyo Secrets Website:");
+console.log("DOM Structure for VIC'JOMA Website:");
 console.log("Root: <html>");
 console.log("  ├── <head> (metadata, title, styles)");
 console.log("  └── <body>");

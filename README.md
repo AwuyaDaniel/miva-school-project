@@ -1,7 +1,7 @@
-# Riyo Secrets - Luxury Fashion House Website
+# VIC'JOMA - Luxury Fashion House Website
 
 ## Project Overview
-A sophisticated multi-page website for the fictional luxury fashion house "Riyo Secrets". This elegant website showcases high-end fashion collections, brand storytelling, and premium customer experiences.
+A sophisticated multi-page website for the fictional luxury fashion house "VIC'JOMA". This elegant website showcases high-end fashion collections, brand storytelling, and premium customer experiences.
 
 ## 📁 Project Structure
 ```
@@ -142,4 +142,4 @@ For technical support or customization inquiries, please refer to the contact in
 
 ---
 
-**Riyo Secrets** - *Elegance Redefined Since 2010*
+**VIC'JOMA** - *Maker of beautiful outfits that suits the body type Since 2010*
