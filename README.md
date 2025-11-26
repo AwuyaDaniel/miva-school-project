@@ -1,7 +1,7 @@
-# VIC'JOMA - Luxury Fashion House Website
+# VIC'JOMA - Apparel & Clothing Website
 
 ## Project Overview
-A sophisticated multi-page website for the fictional luxury fashion house "VIC'JOMA". This elegant website showcases high-end fashion collections, brand storytelling, and premium customer experiences.
+A sophisticated multi-page website for the fictional Apparel & Clothing "VIC'JOMA". This elegant website showcases high-end fashion collections, brand storytelling, and premium customer experiences.
 
 ## 📁 Project Structure
 ```
