@@ -492,6 +492,9 @@ p {
     color: var(--primary-dark);
 }
 
+.dark-theme .member-name{
+    color: var(--text-primary);
+}
 .member-role {
     color: var(--accent-primary);
     font-style: italic;
